@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 12vh);
+    grid-template-columns: repeat(4, 15vh);
     grid-template-rows: minmax(6vh,fit-content) repeat(7, 6vh);
 }
 .prev{
