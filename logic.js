@@ -24,31 +24,33 @@ class calculator{
         }
     }
     del(){
-        this.curr=this.curr.toString().slice(0,-1);
+        console.log(this.curr.toString().slice(0,-1));
+        if(this.curr.toString().slice(0,-1)===''){ this.curr='0';}
+        else{
+            this.curr=this.curr.toString().slice(0,-1);
+        }
+        console.log(this.curr);
     }
     compute(){
-        const pr = parseFloat(this.prev);
+        var pr = this.prev;
         const cu = parseFloat(this.curr);
+        pr = parseFloat(pr.split(',').join(''));
         if(pr==0||isNaN(cu)) return;
         switch(this.oper){
             case '+':
                 this.curr = pr + cu;
-                this.prev = '0';
                 this.oper = undefined;
                 break;
             case '-':
                 this.curr = pr - cu;
-                this.prev = '0';
                 this.oper = undefined;
                 break;
             case '*':
                 this.curr = pr * cu;
-                this.prev = '0';
                 this.oper = undefined;
                 break;
             case '÷':
                 this.curr = pr / cu;
-                this.prev = '0';
                 this.oper = undefined;
                 break;
             default:
@@ -76,6 +78,10 @@ class calculator{
         }
         else{
             this.prevo.innerHTML=0;
+            if(this.prev!=='0'){
+                this.curr='0';
+                this.prev='0';
+            }
         }
     }
 }
