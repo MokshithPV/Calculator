@@ -16,7 +16,8 @@ class calculator{
         if(snum.includes('.')){
             var inti = parseFloat(snum.split('.')[0]);
             const frac = snum.split('.')[1];
-            inti = inti.toLocaleString('en', { maximumFractionDigits: 0 })
+            if(isNaN(inti)) inti='0';
+            else inti = inti.toLocaleString('en', { maximumFractionDigits: 0 });
             return `${inti}.${frac}`;
         }
         else{
