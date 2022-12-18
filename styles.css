@@ -10,27 +10,32 @@ body {
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    flex-direction: column;
     grid-template-columns: repeat(4, 5%);
-    grid-template-rows: minmax(50px,auto) repeat(7, 60%);
+    grid-template-rows: minmax(6vh,fit-content) repeat(7, 6vh);
 }
 .prev{
     color: rgba(255, 255, 255, 0.75);
     text-align: right;
     background-color: rgba(0, 0, 0, 0.75);
-    height: 90%;
+    min-height: 100%;
     font-size: 1.5rem;
-    margin-top: 4.5%;
     font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-all;
+    align-items: flex-end;
+    position: relative;
 }
 .curr{
     color: white;
-    text-align: right;
     background-color: rgba(0, 0, 0, 0.75);
-    height: 90%;
+    min-height: 100%;
     font-size: 2.5rem;
     font-weight: bolder;
-    margin-top: auto;
+    word-wrap: break-word;
+    text-align: right;
+    word-break: break-all;
+    align-items: flex-end;
+    position: relative;
 }
 .double{
     grid-column: span 2;

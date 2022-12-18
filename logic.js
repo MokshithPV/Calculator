@@ -14,13 +14,13 @@ class calculator{
     disp(num){
         const snum = num.toString();
         if(snum.includes('.')){
-            const inti = snum.split('.')[0];
+            var inti = parseFloat(snum.split('.')[0]);
             const frac = snum.split('.')[1];
             inti = inti.toLocaleString('en', { maximumFractionDigits: 0 })
             return `${inti}.${frac}`;
         }
         else{
-            return snum.toLocaleString('en', { maximumFractionDigits: 0 });
+            return parseFloat(snum).toLocaleString('en', { maximumFractionDigits: 0 });
         }
     }
     del(){
@@ -57,7 +57,7 @@ class calculator{
     }
     app(num){
         if(this.curr==='0') this.curr='';
-        if(num=='.'&& this.curr.includes('.')) return;
+        if(num.toString()==='.'&& this.curr.includes('.')) return;
         this.curr=this.curr.toString() + num.toString();
     }
     opera(opera){
@@ -65,7 +65,7 @@ class calculator{
         if(this.prev !== '0'){
             this.compute();
         }
-        this.prev=this.curr;
+        this.prev=this.disp(this.curr);
         this.oper=opera;
         this.curr='0';
     }
