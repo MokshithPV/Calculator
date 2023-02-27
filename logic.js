@@ -13,6 +13,7 @@ class calculator{
     }
     disp(num){
         const snum = num.toString();
+        console.log(snum);
         if(snum.includes('.')){
             var inti = parseFloat(snum.split('.')[0]);
             const frac = snum.split('.')[1];
@@ -21,6 +22,7 @@ class calculator{
             return `${inti}.${frac}`;
         }
         else{
+            console.log(parseFloat(snum).toLocaleString('en', { maximumFractionDigits: 0 }));
             return parseFloat(snum).toLocaleString('en', { maximumFractionDigits: 0 });
         }
     }
